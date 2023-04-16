@@ -14,7 +14,7 @@
                 <img src="images/odin-lined.png" alt="logo" style="width: 60px;">
                 <h1>BEYOND</h1>
             </div>
-            <img src="images/halie-west-25xggax4bSA-unsplash.jpg" alt="Image">
+            <img class="hero" src="images/halie-west-25xggax4bSA-unsplash.jpg" alt="Image">
             <div class="signup-text">
                 <a href="#signup-form">REGISTER</a>
             </div>
@@ -33,7 +33,10 @@
                           <input type="text" placeholder="Enter Email" name="email" required>
 
                           <label for="password"><b>Password</b></label>
-			              <input type="password" placeholder="Enter Password" name="password" id="password" minlength="6" required>
+			              <input type="password" placeholder="Enter Password" name="password" id="password" minlength="6" required
+                          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+       title="Password must be at least 8 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.">
+
                         </div>
 
                         <div>
@@ -44,8 +47,8 @@
                           <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 
 			              <label for="confirm-password"><b>Confirm Password</b></label>
-			              <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password" maxlength="6" required oninput="checkPasswordMatch()"> 
-                          <div id="password-match-message"></div>
+			              <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password"  required> 
+                          <div id="password-error" style="color: red;"></div>
                         </div>
 		            </form>
                   <div class="sign-up-div" id="sign-in">
@@ -54,12 +57,8 @@
 			          <p>Already have an account? <a href="#">Log in</a></p>
 		             </div>
                     </div>
-	            </div>
-            
-                         
+	            </div>         
         </div>
-    </div>
-    </div>
+    <script src="script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
